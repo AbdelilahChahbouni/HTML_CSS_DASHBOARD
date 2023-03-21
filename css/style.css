@@ -4,7 +4,10 @@
      padding: 0;
      margin: 0;
 }
-
+/* global settings */
+:root {
+     --main-tarnsition: 1s;
+}
 ul {
      list-style-type: none;
      padding: 0;
@@ -35,7 +38,7 @@ body {
 }
 
 .main-container .col1-sidebar  {
-     flex-basis: 15%;
+     flex-basis: 12%;
      width: 100%;
 
 }
@@ -66,22 +69,217 @@ body {
      transform: translateX(-50%);
 }
 
-.main-container .col2-side-bare-content {
-     flex-basis: 85%;
-     background-color: yellow;
+.main-container .col2-sidebar-content {
+     flex-basis: 88%;
 }
 
-.main-container .col2-side-bare-content .header {
-     background-color: cyan;
-     min-height: 80px;
+.main-container .col2-sidebar-content .header {
+     max-height:60px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+}
+.main-container .col2-sidebar-content .col2-body {
+     background-color: #f1f5f9;
+}
+.main-container .col2-sidebar-content .col2-body h3 {
+     padding-top: 20px;
+     margin-bottom: 40px;
+     font-size: 30px;
+     letter-spacing: 2px;
+     position: relative;
 }
 
-.main-container .col2-side-bare-content .col2-body {
-     background-color: #eee;
+ .main-container .col2-sidebar-content .col2-body h3:after {
+     content: "";
+     position: absolute;
+     width: 120px;
+     height: 3px;
+     background-color: white ;
+     left: 0;
+     bottom: -10px;
+     
+} 
+.main-container .col2-sidebar-content .col2-body h3:before {
+     content: "";
+     position: absolute;
+     width: 40px;
+     height: 3px;
+     left: 0;
+     bottom: -10px;
+     background-color: black;
+     z-index: 100;
+}
+
+.main-container .col2-sidebar-content .col2-body .container .cards {
+     display: grid;
+     grid-template-columns: repeat(auto-fill , minmax(450px , 1fr));
+     column-gap: 20px;
+     
      
 }
+.test {
+     background-color: white;
+     border-radius: 10px;
+}
 
+.col2-sidebar-content .header .container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;}
 
+.col2-sidebar-content .header .container .search-field{
+     position: relative;
+}
+
+.col2-sidebar-content .header .container .search-field:after{
+     content: '\f002';
+     font-family: FontAwesome;
+     font-weight: 900;
+     left: 10px;
+     top: 10px;
+     margin-right:5px;   
+     position: absolute;  
+     color: #eee;
+
+}
+
+.col2-sidebar-content .header .container .search-field input{
+     padding-top: 10px;
+     padding-left: 33px;
+     padding-bottom: 10px ;
+     border: 2px solid #ddd;
+     outline: none;
+     border-radius: 10px;
+     position: relative;
+     width: 166px;
+     transition: var(--main-tarnsition);
+}
+
+.col2-sidebar-content .header .container .search-field input:focus::placeholder {
+     opacity: 0;
+}
+
+.col2-sidebar-content .header .container .search-field input:focus {
+     width: 200px;
+}
+
+.col2-sidebar-content .header .container .header-img {
+     display: flex;
+     align-items: center;
+}
+
+.main-container .col1-sidebar .container .list-sidebar li {
+     padding: 10px;
+     margin-bottom: 3px;     
+}
+
+.col2-sidebar-content .header .container .header-img img {
+     width: 30px;
+     height: 30px;
+     margin-left: 15px;
+}
+
+.col2-sidebar-content .header .container .header-img i {
+     position: relative;
+}
+
+.col2-sidebar-content .header .container .header-img i:after {
+     content: "";
+     position: absolute;
+     width: 10px;
+     height: 10px;
+     top: -16px;
+     right:-6px;
+     background-color: red;
+     border-radius: 50%;
+}
+
+.main-container .col1-sidebar .container .list-sidebar li:first-child{
+     background-color: #eee;
+     border-radius: 5px;
+}
+
+.main-container .col1-sidebar .container .list-sidebar li:hover {
+     background-color: #eee;
+     border-radius: 5px;
+     transition: var(--main-tarnsition);
+
+}
+
+.main-container .col1-sidebar .container .list-sidebar li a {
+     color: black;
+     font-size: 18px;
+     font-weight: 500;
+     padding-left: 5px;
+}
+
+.col2-sidebar-content .col2-body .container .cards .welcome-card .header-welcome {
+     background-color: #eee;
+     display: flex;
+     justify-content: space-between;
+     padding-left: 15px;
+     padding-right: 15px;
+     padding-bottom: 10px;
+     padding-top: 20px;
+     position: relative;
+}  
+.col2-sidebar-content .col2-body .container .cards .welcome-card .header-welcome .title-card h4 {
+     font-size: 25px;
+     margin-bottom: 10px;
+}
+
+.col2-sidebar-content .col2-body .container .cards .welcome-card .header-welcome img {
+     width: 200px;
+     height: 120px;
+}
+
+.col2-sidebar-content .col2-body .container .cards .welcome-card .header-welcome img.avatar {
+     width: 64px;
+     height: 64px;
+     position: absolute;
+     bottom: -32px;
+     left: 20px;
+     /* box-shadow: 0 0 5px #ddd; */
+     /* border-radius: 50%; */
+     border-radius: 50%;
+     border: solid 2px white;
+     padding: 2px;
+}
+
+.col2-sidebar-content .col2-body .container .cards .welcome-card .body-welcome {
+     padding-top: 60px;
+     padding-bottom: 80px;
+}
+
+.col2-sidebar-content .col2-body .container .cards .welcome-card .body-welcome .table-skills {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     text-align: center;
+     border-top: solid #eee 1px;
+     border-bottom: solid #eee 1px;
+     padding: 20px 0px;
+}
+.col2-sidebar-content .col2-body .container .cards .welcome-card .body-welcome .table-skills p{
+     font-size: 18px;
+}
+
+.col2-sidebar-content .col2-body .container .cards .welcome-card .body-welcome .table-skills p span {
+     display: block;
+     margin-top: 15px;
+     font-size: 15px;
+     color: #888;
+}.col2-sidebar-content .col2-body .container .cards .welcome-card .body-welcome button {
+     padding: 4px 10px ;
+     background-color: #0075ff;
+     margin: 15px 15px 15px auto;
+     color: white;
+     font-size: 15px;
+     border-radius: 6px;
+     display: block;
+     border: none;
+     
+}
 
 /* End Dashboard Page */
 
