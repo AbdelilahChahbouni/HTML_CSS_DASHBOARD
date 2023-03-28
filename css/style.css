@@ -787,9 +787,18 @@ body {
 
 
 .last-projects-progress .container .stepes-project  {
-     /* border-left: solid 3px blue; */
-     
-     /* margin-left: 20px; */
+     position: relative;
+}
+
+.last-projects-progress .container .stepes-project:after {
+     content: "";
+     position: absolute;
+     left: 13px;
+     top: 0;
+     height: calc(100% - 20px);
+     width: 3px;
+     background-color: blue;
+
 }
 
 .last-projects-progress .container .stepes-project li:not(:last-child) {
@@ -798,7 +807,7 @@ body {
 
 .last-projects-progress .container .stepes-project li{
      position: relative;
-     padding-left: 30px;
+     padding-left: 50px;
 }
 
 
@@ -816,6 +825,13 @@ body {
 
 }
 
+.last-projects-progress .container .stepes-project li.blink:after {
+     animation-name: blink-animation ;
+     animation-duration: 2s;
+     animation-timing-function:linear ;
+     animation-iteration-count: infinite;     
+}
+
 .last-projects-progress .container .stepes-project li:before {
      content: "";
      position: absolute;
@@ -829,6 +845,19 @@ body {
 }
 
 
+
+@keyframes blink-animation {
+     0% {
+          background-color: blue;
+     }
+
+     50% {
+          background-color: blue;
+     }
+     100% {
+          background-color: white;
+     }
+}
 
 
 
